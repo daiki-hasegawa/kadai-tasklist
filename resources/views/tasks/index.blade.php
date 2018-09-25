@@ -10,7 +10,7 @@
           
           <li> 
           {!! link_to_route('tasks.show', $task->id, ['id' => $task->id]) !!} :
-          {{ $tasks->content }}</li>
+          {{ $task->content }}</li>
           
           @endforeach
       </ul>
