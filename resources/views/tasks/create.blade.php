@@ -3,7 +3,20 @@
 @section('content')
 
 <h1>メッセージ新規作成ページ</h1>
-{{ Form::model ($task,['route' => 'tasks.store']) }}
+
+ @if (count($errors) > 0)
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
+
+{{ Form::model($task, ['route' => 'tasks.store']) }}
+
+{{Form::label('status','ステータス:')}}
+
+{{Form::text('status')}}
 
 {{Form::label('content','メッセージ:')}}
 
